@@ -56,7 +56,8 @@ var Log = function(){
 				this.agregated_logs[title] = {
 					sum:{},
 					max:{},
-					avg:{}
+					avg:{},
+					count:{}
 					
 				};
 			}
@@ -129,6 +130,7 @@ var log_retrieval_server = net.createServer(function (socket) {
 	socket.on("data", function(data) {
 		
 		data = JSON.parse(data);
+		console.log(data);
 		
 		var response = logs.get_logs(data.group, data.type, data.time_from, data.time_to);
 		
