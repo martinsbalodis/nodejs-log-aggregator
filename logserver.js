@@ -32,6 +32,7 @@ var Log = function(){
 			var sum = null;
 			var max = null;
 			var avg = null;
+			var count = this.logs[title].length;
 			
 			for(var i in this.logs[title]) {
 				
@@ -43,7 +44,7 @@ var Log = function(){
 			}
 			
 			if(this.logs[title].length) {
-				avg = sum/this.logs[title].length;
+				avg = sum/count;
 			}
 			
 			// clear data
@@ -63,6 +64,7 @@ var Log = function(){
 			this.agregated_logs[title]['sum'][time] = sum;
 			this.agregated_logs[title]['max'][time] = max;
 			this.agregated_logs[title]['avg'][time] = avg;
+			this.agregated_logs[title]['count'][time] = count;
 			
 		}
 		
